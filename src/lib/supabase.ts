@@ -19,3 +19,12 @@ export interface Profile {
   created_at: string;
   updated_at: string;
 }
+
+export const Bolt Database = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,  // Cette ligne est cruciale
+  },
+});
+
